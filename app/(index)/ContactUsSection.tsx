@@ -20,7 +20,7 @@ export default function ContactUsSection() {
               />
               تواصل معنا علي واتساب{" "}
             </div>
-            <div className='flex gap-4'>
+            <div className='flex flex-wrap gap-4'>
               <a href='https://wa.me/+966597005245' target='_blank'>
                 <span dir='ltr' className='text-primary'>
                   +966597005245
