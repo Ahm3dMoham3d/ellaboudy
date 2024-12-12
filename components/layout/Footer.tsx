@@ -66,7 +66,7 @@ export default function Footer() {
 
           <div className='flex items-center gap-2'>
             <Mail className='w-4 h-4' />
-            <span className=''>ahmedEllaboudy@SSA-eg.com</span>
+            <span className=''>ahmedellaboudy@eg-ellaboudy.com</span>
           </div>
         </div>
       </div>

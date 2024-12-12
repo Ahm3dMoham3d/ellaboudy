@@ -51,9 +51,14 @@ export default function ContactUsSection() {
 
           <div className='flex items-center gap-2'>
             <Mail className='w-4 h-4' />
-            <a className='text-md' href='mailto:ahmedEllaboudy@SSA-eg.com'>
+            <a
+              className='text-md'
+              href='mailto:ahmedellaboudy@eg-ellaboudy.com'
+            >
               راسلنا علي البريد{" "}
-              <span className='text-primary'>ahmedEllaboudy@SSA-eg.com</span>
+              <span className='text-primary'>
+                ahmedellaboudy@eg-ellaboudy.com
+              </span>
             </a>
           </div>
         </div>
