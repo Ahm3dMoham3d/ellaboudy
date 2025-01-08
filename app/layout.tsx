@@ -1,10 +1,5 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
-import Dir from "@/components/provider";
 
 const neue = localFont({
   src: [
@@ -14,20 +9,6 @@ const neue = localFont({
     { path: "./fonts/NeueFrutigerWorld-Black.woff", weight: "800" },
   ],
 });
-
-export const metadata: Metadata = {
-  title: {
-    template:
-      "%s | مكتب الأستاذ أحمد اللبودي للمحاسبة والمراجعة والإستشارات المالية والضريبية",
-    default:
-      "مكتب الأستاذ أحمد اللبودي للمحاسبة والمراجعة والإستشارات المالية والضريبية",
-  },
-  description:
-    "مكتب الأستاذ أحمد اللبودي للمحاسبة والمراجعة والاستشارات المالية والضريبية يقدم خدمات إدارة الحسابات، التحليل المالي، المراجعة، النصائح الضريبية، والاستشارات المالية للمشاريع وتحليل السوق.",
-  twitter: {
-    card: "summary_large_image",
-  },
-};
 
 export default function RootLayout({
   children,
@@ -39,11 +20,7 @@ export default function RootLayout({
       <body
         className={`${neue.className} antialiased flex flex-col min-h-screen`}
       >
-        <Navbar />
-        <main className='flex-grow w-full max-w-[1440px] mx-auto p-4 mb-16'>
-          <Dir>{children}</Dir>
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

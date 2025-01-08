@@ -16,13 +16,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
 
     ...services,
-
-    {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/transit-services/vessels-tolls-calculator`,
-    },
-
-    {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/transit-services/yachts-tolls-calculator`,
-    },
   ];
 }

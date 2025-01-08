@@ -1,0 +1,59 @@
+enum Role {
+  ADMIN
+  USER
+  EMPLOYEE
+}
+
+enum GENDER {
+  MALE
+  FEMALE
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id          String   @id @default(cuid())
+  name        String
+  email       String   @unique
+  password    String
+  role        Role     @default(USER)
+  isActive    Boolean  @default(false)
+  phoneNumber String
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @updatedAt @map(name: "updated_at")
+}
+
+model Customer {
+  id           String   @id @default(cuid())
+  nationalId   Int
+  name         String
+  email        String   @unique
+  dob          DateTime
+  address      String
+  phoneNumbers String[]
+  waNumbers    String[]
+  city         String
+  gender       GENDER
+}
+
+model Service {
+  id           String        @id @default(cuid())
+  name         String
+  price        Int
+  ServiceSteps ServiceSteps?
+}
+
+model ServiceSteps {
+  id        String   @id @default(cuid())
+  steps     String[]
+  service   Service  @relation(fields: [serviceId], references: [id])
+  serviceId String   @unique
+}
